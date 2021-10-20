@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>达雷尔个人网站</title>
+	<link rel="stylesheet" type="text/css" href="css/first.css">
+</head>
+
+<body style="margin: 0px;">
+	<div id="app">
+		<!-- 标题 -->
+		<div class="index">
+			<a href="https://www.bilibili.com/bangumi/play/ss2546/?from=search&seid=13103357291057517368" class="watch title">达雷尔在线观看</a>
+			<p class="watch page">首页</p>
+		</div>
+		<!-- 展示图 -->
+		<div :class="picName" id="one">
+			<!-- <div :class="isColor" @mouseenter="enter" @mouseleave="leave"> -->
+			<!-- <div class="hand background" onclick="oneFn()"> -->
+			<div class="hand background" @click="changePic(1)"> 
+				<p>达雷尔</p>
+				<img src="image/add03.png">
+			</div>
+			<div class="hand background1" @click="changePic(2)">
+				<p>秒速5厘米</p>
+				<img src="image/add03.png">
+			</div>
+			<div class="hand background2" @click="changePic(3)">
+				<p>追逐繁星</p>
+				<img src="image/add03.png">
+			</div>
+			<div class="hand background3" @click="changePic(4)">
+				<p>肖恩・斯诺</p>
+				<img src="image/add03.png">
+			</div>
+			<div class="hand background4" @click="changePic(5)">
+				<p>天气之子</p>
+				<img src="image/add03.png">
+			</div>
+		</div>
+		<!-- 百叶窗 -->
+		<div>
+			<ul style="padding: 0;">
+				<li :class="onePic">
+					<div class="border zoom" style="float: right;" @click="changeImg(4)">
+						<i>天气之子</i>
+					</div>
+					<div class="border zoom" style="float: right;" @click="changeImg(3)">
+						<i>肖恩・斯诺</i>
+					</div>
+					<div class="border zoom" style="float: right;" @click="changeImg(2)">
+						<i>追逐繁星</i>
+					</div>
+					<!-- <div class="border" style="float: right;" onclick="changeFn()"> -->
+					<div class="border zoom" style="float: right;" @click="changeImg(1)">
+						<i>秒速5厘米</i>
+					</div>
+				</li>
+				<li :class="twoPic">
+					<div class="border zoom" style="float: right;" @click="changeImg(4)">
+						<i>天气之子</i>
+					</div>
+					<div class="border zoom" style="float: right;" @click="changeImg(3)">
+						<i>肖恩・斯诺</i>
+					</div>
+					<div class="border zoom" style="float: right;" @click="changeImg(2)">
+						<i>追逐繁星</i>
+					</div>
+					<div class="border zoom" style="float: left;" @click="changeImg(0)">
+						<i>达雷尔</i>
+					</div>
+				</li>
+				<li :class="threePic">
+					<div class="border zoom" style="float: right;" @click="changeImg(4)">
+						<i>天气之子</i>
+					</div>
+					<div class="border zoom" style="float: right;" @click="changeImg(3)">
+						<i>肖恩・斯诺</i>
+					</div>
+					<div class="border zoom" style="float: left;" @click="changeImg(0)">
+						<i>达雷尔</i>
+					</div>
+					<div class="border zoom" style="float: left;" @click="changeImg(1)">
+						<i>秒速5厘米</i>
+					</div>
+				</li>
+				<li :class="fourPic">
+					<div class="border zoom" style="float: right;" @click="changeImg(4)">
+						<i>天气之子</i>
+					</div>
+					<div class="border zoom" style="float: left;" @click="changeImg(0)">
+						<i>达雷尔</i>
+					</div>
+					<div class="border zoom" style="float: left;" @click="changeImg(1)">
+						<i>秒速5厘米</i>
+					</div>										
+					<div class="border zoom" style="float: left;" @click="changeImg(2)">
+						<i>追逐繁星</i>
+					</div>
+				</li>
+				<li :class="fivePic">
+					<div class="border zoom" style="float: left;" @click="changeImg(0)">
+						<i>达雷尔</i>
+					</div>
+					<div class="border zoom" style="float: left;" @click="changeImg(1)">
+						<i>秒速5厘米</i>
+					</div>
+					<div class="border zoom" style="float: left;" @click="changeImg(2)">
+						<i>追逐繁星</i>
+					</div>										
+					<div class="border zoom" style="float: left;" @click="changeImg(3)">
+						<i>肖恩・斯诺</i>
+					</div>
+				</li>				
+			</ul>
+		</div>
+		<!-- 介绍 -->
+		<div class="introduce">
+			<h1 class="intTitle">【善待暮年】</h1>
+			<p class="message">北京著名女作家楊絳已於2016年5月25日以高齡105 歲過世，以下是她在103歲時寫的一篇【善待暮年】文章；值得推荐，值得學 。</br>
+			　　花開花謝，潮起潮落，不經意間我們正走向人生的暮年。</br>
+			　　從呱呱墜地到兩鬢染霜，歲月的行囊裡装滿了酸甜苦辣。接下來，在夕陽的路上能走多遠，取决於我們的體魄和心態。</br>
+			　　在曾經的歲月裡，每個人都會有大小不一的光環，但這光環已是過去式。當光環退去，誰都需柴米油鹽，誰都是一介布衣。</br>
+			　　我們曾如此渴望命運的波瀾，到最後才發現：人生最曼妙的風景，竟是内心的淡定與從容…</br>
+			　　我們曾如此期望外界的認可，到最後才知道，世界是自己的，與他人毫無關係。</br>
+			　　今天，我們生活的國度裡，銀髮浪潮席捲而來，老年人的比例越來越高，年輕人的負擔越来越重。</br>
+			　　老年朋友們，何不錯開尖峰時間出行，给公共交通緩解壓力，與年輕人相互理解、相互關懷、相互尊重，何樂而不為？</br>
+			　　不要满懷焦灼期待子女常回家看看。子女們有各自的生活和事業，他們像永不停歇的陀螺一樣，上有老下有小，“老”是“ 夕陽 ”，“小”是“朝陽”。朝陽總比夕陽更令人關注和憧憬，這是動物繁衍生息的法則，是規律，誰也不能違背。記住，年輕人永遠比老年人忙。</br>
+			　　人生，夫妻也好，母女父子也罷，不管是怎樣的水乳交融、心心相繫，每個人都是生命的獨立個體，因此，我們要學會在孤獨的時候给自己安慰，在寂寞的時候给自己温暖。</br>
+			　　老要有老的風骨，</br>
+			　　老要有老的優雅，</br>
+			　　正如春華秋實，</br>
+			　　四季輪迴，</br>
+			　　各有風采。</br>
+			　　暮年是美好生活的開始，是一種從容、恬闊、悠哉遊哉的狀態。</br>
+			　　願我們保持一顆寧静的心，</br>
+			　　少些期盼、多些寬容，</br>
+			　　寵辱不驚、去留無礙，</br>
+			　　微笑向前，善待暮年的自己。</p>
+		</div>
+			<!-- 作者介绍 -->
+		<div class="author">
+			<img src="image/yang1.jpg" class="head">
+			<div>
+				<h1 class="name">杨绛，本名杨季康</h1>
+				<p class="authorText">杨绛（1911年7月17日—2016年5月25日），本名杨季康，江苏无锡人，中国现代作家、文学翻译家、外国文学研究家、中国社会科学院荣誉学部委员。</p>
+				<button class="goto">点击前往百度百科</button>
+			</div>
+		</div>
+		<!-- 二维码关注 -->
+		<div class="content">
+			<div>
+				<h3>首页</h3>
+				<p>Siki学院</p>
+			</div>
+			<div>
+				<h3>邮箱</h3>
+				<p>邮箱地址</p>
+			</div>
+			<div>
+				<h3>关于Siki学院</h3>
+				<p>Siki学院介绍</p>
+			</div>
+			<div>
+				<img src="image/code.jpg">
+				<h3 class="code">扫描二维码微信关注</h3>
+			</div>	
+		</div>
+		<!-- 备案号 -->
+		<p class="company">版权所有：Siki学院 京ICP备16046985号</p>
+		<!-- <div>{{message}}</div> -->
+	</div>
+</body>
+
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	// 1.js实现鼠标悬停
+	// function over(x) {
+	// 	x.style.background = "#658E56";
+	// }
+	// function leave(x) {
+	// 	x.style.background = "url('image/teb1.jpg')";
+	// 	x.style.backgroundSize = "cover";
+	// }
+	// function over1(x) {
+	// 	x.style.background = "#FAA4DD";
+	// }
+	// function leave1(x) {
+	// 	x.style.background = "url('image/teb2.jpg')";
+	// 	x.style.backgroundSize = "cover";
+	// }
+	// function over2(x) {
+	// 	x.style.background = "#F1CF4A";
+	// }
+	// function leave2(x) {
+	// 	x.style.background = "url('image/teb3.jpg')";
+	// 	x.style.backgroundSize = "cover";
+	// }
+	// function over3(x) {
+	// 	x.style.background = "#719BBA";
+	// }
+	// function leave3(x) {
+	// 	x.style.background = "url('image/teb4.jpg')";
+	// 	x.style.backgroundSize = "cover";
+	// }
+	// function over4(x) {
+	// 	x.style.background = "#D9C3C9";
+	// }
+	// function leave4(x) {
+	// 	x.style.background = "url('image/teb5.jpg')";
+	// 	x.style.backgroundSize = "cover";
+	// }
+
+	// function oneFn(){
+	// 	// console.log(document.getElementsByClassName("station")[0]);
+	// 	// document.getElementsByClassName("station")[0].style.display = "none";
+	// 	document.getElementsByClassName("onePic")[0].style.display = "block";
+	// 	document.getElementById("one").style.display = "none";
+	// }
+	// function twoFn(){
+	// 	document.getElementsByClassName("station")[0].style.display = "none";
+	// 	document.getElementsByClassName("twoPic")[0].style.display = "block";
+	// }
+	// function threeFn(){
+	// 	document.getElementsByClassName("station")[0].style.display = "none";
+	// 	document.getElementsByClassName("threePic")[0].style.display = "block";
+	// }
+	// function fourFn(){
+	// 	document.getElementsByClassName("station")[0].style.display = "none";
+	// 	document.getElementsByClassName("fourPic")[0].style.display = "block";
+	// }
+	// function fiveFn(){
+	// 	document.getElementsByClassName("station")[0].style.display = "none";
+	// 	document.getElementsByClassName("fivePic")[0].style.display = "block";
+	// }
+	// function changeFn(){
+	// 	document.getElementsByClassName("onePic")[0].style.display = "none";
+	// 	document.getElementsByClassName("twoPic")[0].style.display = "block"
+	// }
+	// 2.jQuery实现鼠标悬停
+	// ......Video37
+	// 3.vue实现鼠标悬停
+	var vm=new Vue({
+		el:'#app',
+		data:{
+			message:'Hello World',
+			isColor:'hand background',
+			picName:'station',
+			onePic:'onePic',
+			twoPic:'twoPic',
+			threePic:'threePic',
+			fourPic:'fourPic',
+			fivePic:'fivePic'
+		},
+		methods:{
+			enter:function() {
+				this.isColor = 'hand green';
+			},
+			leave:function(){
+				this.isColor = 'hand background';
+			},
+			changePic(e){
+				this.picName = 'station change';
+				if(e === 1){
+					this.onePic = 'onePic changeBlock';
+				}else if(e === 2){
+					this.twoPic = 'twoPic changeBlock';
+				}else if(e === 3){
+					this.threePic = 'threePic changeBlock';
+				}else if(e === 4){
+					this.fourPic = 'fourPic changeBlock';
+				}else {
+					this.fivePic = 'fivePic changeBlock';
+				}
+				
+			},
+			changeImg(e){
+				this.onePic = 'onePic';
+				this.twoPic = 'twoPic';
+				this.threePic = 'threePic';
+				this.fourPic = 'fourPic';
+				this.fivePic = 'fivePic';
+				this.picName = 'station change';
+				if(e === 0){
+					this.onePic = 'onePic changeBlock';
+				}else if(e === 1){
+					this.twoPic = 'twoPic changeBlock';
+				}else if(e === 2){
+					this.threePic = 'threePic changeBlock';
+				}else if(e === 3){
+					this.fourPic = 'fourPic changeBlock';
+				}else {
+					this.fivePic = 'fivePic changeBlock';
+				}
+			}
+			// changeImg1(){
+			// 	this.onePic = 'onePic';
+			// 	this.twoPic = 'twoPic changeBlock';
+			// 	this.threePic = 'threePic';
+			// 	this.fourPic = 'fourPic';
+			// 	this.fivePic = 'fivePic';
+			// }
+			// changeImg2(){
+			// 	this.onePic = 'onePic';
+			// 	this.twoPic = 'twoPic';
+			// 	this.threePic = 'threePic changeBlock';
+			// 	this.fourPic = 'fourPic';
+			// 	this.fivePic = 'fivePic';
+			// }
+			// changeImg3(){
+			// 	this.onePic = 'onePic';
+			// 	this.twoPic = 'twoPic';
+			// 	this.threePic = 'threePic';
+			// 	this.fourPic = 'fourPic changeBlock';
+			// 	this.fivePic = 'fivePic';
+			// }
+			// changeImg4(){
+			// 	this.onePic = 'onePic';
+			// 	this.twoPic = 'twoPic';
+			// 	this.threePic = 'threePic';
+			// 	this.fourPic = 'fourPic';
+			// 	this.fivePic = 'fivePic changeBlock';
+			// }
+			
+		}
+	})
+</script>
+</html>
