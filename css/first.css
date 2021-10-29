@@ -1,0 +1,213 @@
+	.index{
+		display: flex;
+	}
+	.watch{
+		color: #292C2E;
+		font-size: 20px;
+		margin: 28px;
+		font-family: "方正粗圆简体";
+	}
+	.page{
+		margin-left: 42%;
+	}
+	.title{
+		text-decoration:none;
+		margin-left: 16%;
+	}
+	.station{
+		display: flex;
+		background: red;
+		height: 760px;
+		width: 100%;
+		/*display: none;*/
+	}
+	.hand{
+		flex: 1;
+		border-right: 1px solid white;
+		text-align: center;
+		padding-top: 350px;
+	}
+	.hand p{
+		font-size: 18px;
+		color: white;
+		font-family: "方正粗圆简体";
+	}
+	.background{
+		background: url("../imgs/bg.png");
+		background-size: cover;
+	}
+	/*.green{
+		background: #658E56;
+	}*/
+	.background:hover{
+		background: #658E56;
+	}
+	.background1:hover{
+		background: #FAA4DD;
+	}
+	.background2:hover{
+		background: #F1CF4A;
+	}
+	.background3:hover{
+		background: #719BBA;
+	}
+	.background4:hover{
+		background: #D9C3C9;
+	}
+	.background1{
+		background: url("../imgs/bg1.png");
+		background-size: cover;
+	}
+	.background2{
+		background: url("../imgs/bg2.png");
+		background-size: cover;
+	}
+	.background3{
+		background: url("../imgs/bg3.png");
+		background-size: cover;
+	}
+	.background4{
+		background: url("../imgs/bg4.png");
+		background-size: cover;
+	}
+	.introduce{
+		background: url("../imgs/background.png");
+		background-size: cover;
+		text-align: center;
+	    padding: 80px 0px;
+	    margin-top: 20px;
+	}
+	.intTitle{
+		font-family: "方正粗圆简体";
+		color: #292C2E;
+	}
+	.message{
+		color: #8FA1B0;
+		font-size: 18px;
+		font-family: "方正准圆简体";
+		line-height: 30px;
+	}
+	.author{
+		display: flex;
+		background: #FAFAFA;
+		margin: 20px 0px;
+	}
+	.head{
+		width: 15%;
+	    margin: 70px 80px 0px 300px;
+	    border-radius: 30px 30px 0px 0px;
+	}
+	.goto{
+		background: rgb(0, 161, 233);
+	    color: white;
+	    padding: 10px 60px;
+	    font-family: "方正粗圆简体";
+	    font-size: 16px;
+	    border-radius: 30px;
+	    border: 0px;
+	}
+	.name{
+		margin-top: 70px;
+		font-family: "方正粗圆简体";
+		color: #292C2E;
+	}
+	.authorText{
+		width: 70%;
+	}
+	.content{
+		display: flex;
+		width: 60%;
+    	margin: 0 auto;
+	}
+	.content div{
+		flex: 1;
+		margin-top: 50px;
+	}
+	.content h3{
+		font-size: 14px;
+		color: #292C2E;
+		font-family: "方正粗圆简体";
+		line-height: 14px;
+	}
+	.content p{
+		font-size: 13px;
+		font-family: "方正准圆简体";
+		color: rgb(143, 161, 176);
+		line-height: 13px; 
+	}
+	.code{
+		margin-left: 12%;
+	}
+	.content img{
+		width: 80%;
+		height: 80%;
+	}
+	.company{
+		background: black;
+		color: white;
+		text-align: center;
+		margin: 0;
+		padding: 20px 0px;
+	}
+	.onePic{
+		background: url("../imgs/1.png");
+		background-size: cover;
+		height: 760px;
+		display: none;
+	}
+	.twoPic{
+		background: url("../imgs/2.png");
+		background-size: cover;
+		height: 760px;
+		display: none;
+	}
+	.threePic{
+		background: url("../imgs/3.png");
+		background-size: cover;
+		height: 760px;
+		display: none;
+	}
+	.fourPic{
+		background: url("../imgs/4.png");
+		background-size: cover;
+		height: 760px;
+		display: none;
+	}
+	.fivePic{
+		background: url("../imgs/5.png");
+		background-size: cover;
+		height: 760px;
+		display: none;
+	}
+	.border{
+		border: 1px solid rgba(255,255,255,0.2);
+		background: rgba(0,0,0,0.2);
+		width: 42px;
+		height: 758px;
+	}
+	.border i{
+		font-family: "方正粗圆简体";
+	    font-size: 18px;
+	    color: white;
+	    width: 18px;
+	    position: absolute;
+	    padding-left: 11px;
+	    padding-top: 350px;
+	}
+	.change{
+		display: none;
+	}
+	.changeBlock{
+		display: block;
+	}
+	.zoom{
+		animation: zoom 500ms ease-in-out;
+	}
+	@keyframes zoom{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
