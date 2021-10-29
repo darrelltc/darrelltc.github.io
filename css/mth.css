@@ -1,0 +1,13 @@
+
+	body{
+		background-color: #D4E1CD;
+	}
+	p{
+		font-size: 22px;
+		line-height: 40px;	
+		margin-left: 35px;
+		margin-right: 35px;	
+	}
+	h1, h2{
+		text-align: center;
+	}
