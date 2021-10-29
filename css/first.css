@@ -33,7 +33,7 @@
 		font-family: "方正粗圆简体";
 	}
 	.background{
-		background: url("../imgs/bg.png");
+		background: url("./image/bg.png");
 		background-size: cover;
 	}
 	/*.green{
