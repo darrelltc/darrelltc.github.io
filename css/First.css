@@ -31,7 +31,7 @@
 		font-family: "方正粗圆简体";
 	}
 	.background {
-		background:  url("../image/teb1.jpg");
+		background:  url(../image/teb1.jpg);
 		background-size: cover;
 	}
 /*	.green {
