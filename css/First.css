@@ -31,7 +31,7 @@
 		font-family: "方正粗圆简体";
 	}
 	.background {
-		background:  url("./image/teb1.jpg");
+		background:  url("../image/teb1.jpg");
 		background-size: cover;
 	}
 /*	.green {
@@ -53,23 +53,23 @@
 		background: #D9C3C9;
 	}
 	.background1 {
-		background:  url("./image/teb2.jpg");
+		background:  url("../image/teb2.jpg");
 		background-size: cover;
 	}
 	.background2 {
-		background:  url("./image/teb3.jpg");
+		background:  url("../image/teb3.jpg");
 		background-size: cover;
 	}
 	.background3 {
-		background:  url("./image/teb4.jpg");
+		background:  url("../image/teb4.jpg");
 		background-size: cover;
 	}
 	.background4 {
-		background:  url("./image/teb5.jpg");
+		background:  url("../image/teb5.jpg");
 		background-size: cover;
 	}
 	.introduce {
-		background:  url("./image/Village.jpg");
+		background:  url("../image/Village.jpg");
 		background-size: cover;
 		text-align: center;
 		padding: 80px 0px;
@@ -152,31 +152,31 @@
 		padding: 20px 0px;
 	}
 	.onePic{
-		background:  url("./image/Cobbled Streets.jpg");
+		background:  url("../image/Cobbled Streets.jpg");
 		background-size: cover;
 		height: 760px;
 		display: none;
 	}
 	.twoPic{
-		background:  url("./image/Aoraki Mount.jpg");
+		background:  url("../image/Aoraki Mount.jpg");
 		background-size: cover;
 		height: 760px;
 		display: none;		
 	}
 	.threePic{
-		background:  url("./image/The New River.jpg");
+		background:  url("../image/The New River.jpg");
 		background-size: cover;
 		height: 760px;
 		display: none;		
 	}
 	.fourPic{
-		background:  url("./image/Lucen.jpg");
+		background:  url("../image/Lucen.jpg");
 		background-size: cover;
 		height: 760px;
 		display: none;		
 	}
 	.fivePic{
-		background:  url("./image/The Regional.jpg");
+		background:  url("../image/The Regional.jpg");
 		background-size: cover;
 		height: 760px;
 		display: none;		
