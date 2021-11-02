@@ -84,6 +84,10 @@
 		color: white;
 		font-size: 18px;
 		line-height: 40px;
+		width: 60%;
+		margin-left: 20%;
+		text-align: justify;
+		text-indent: 2em;
 	}
 	.author {
 		display: flex;
