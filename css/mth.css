@@ -2,6 +2,7 @@
 	body{
 		background-color: #D4E1CD;
 		max-width: 980px;
+		text-align: center;
 	}
 	p{
 		font-size: 22px;
@@ -13,5 +14,6 @@
 		text-align: center;
 
 	}
+
 
 
