@@ -2,18 +2,21 @@
 	body{
 		background-color: #D4E1CD;
 		max-width: 980px;
-		text-align: center;
+        margin: 20px auto;
+        padding: 0 10px;
 	}
 	p{
 		font-size: 22px;
 		line-height: 40px;	
 		margin-left: 35px;
 		margin-right: 35px;	
+		
 	}
 	h1, h2{
 		text-align: center;
 
 	}
+
 
 
 
