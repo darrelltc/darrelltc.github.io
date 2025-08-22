@@ -28,12 +28,12 @@ h1, h2 {
 
 .chapter-body {
   margin-top: 20px;
-  white-space: pre-wrap; /* 保留换行 */
 }
 
 .chapter-body p {
   text-indent: 2em;
   margin: 12px 0;
+  white-space: pre-wrap; /* 保留换行 */
 }
 
 .nav {
@@ -49,13 +49,14 @@ h1, h2 {
   padding: 10px 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background: #f9fafb;
+  background: #c1e6c6;
   color: #2563eb;
 }
 .nav a:hover {
   background: #2563eb;
   color: #fff;
 }
+
 
 
 
