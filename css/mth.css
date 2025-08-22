@@ -9,7 +9,7 @@ body {
   max-width: 800px;
   margin: 40px auto;
   padding: 0 20px;
-  background: #fff;
+  background: #c1e6c6;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
@@ -55,6 +55,7 @@ h1, h2 {
   background: #2563eb;
   color: #fff;
 }
+
 
 
 
