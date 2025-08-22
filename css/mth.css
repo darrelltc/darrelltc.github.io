@@ -20,10 +20,23 @@ h1, h2 {
 }
 
 .chapter-title {
-  margin: 24px 0;
+  margin: 24px 0 10px;
   font-size: 28px;
   font-weight: 700;
   text-align: center;
+  position: relative;
+}
+
+/* 分割线样式 */
+.chapter-title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  max-width: 300px;
+  height: 2px;
+  margin: 14px auto 0;
+  background: linear-gradient(to right, transparent, #d1d5db, transparent);
+  border-radius: 2px;
 }
 
 .chapter-body {
@@ -57,6 +70,7 @@ h1, h2 {
   background: #c7edcc;
   color: #fff;
 }
+
 
 
 
