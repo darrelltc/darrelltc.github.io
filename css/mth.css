@@ -34,6 +34,7 @@ h1, h2 {
   text-indent: 2em;
   margin: 12px 0;
   white-space: pre-wrap; /* 保留换行 */
+  font-size: 18px;
 }
 
 .nav {
@@ -56,3 +57,4 @@ h1, h2 {
   background: #c7edcc;
   color: #fff;
 }
+
