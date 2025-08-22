@@ -14,6 +14,17 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
+/* 目录页分割线 */
+.toc-divider {
+  width: 70%;
+  max-width: 400px;
+  height: 3px;
+  margin: 14px auto 24px;
+  background: linear-gradient(to right, transparent, #2f855a, transparent);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
 h1, h2 {
   text-align: center;
   margin-top: 24px;
@@ -80,6 +91,7 @@ h1, h2 {
 .toc-link {
   font-weight: 600;
 }
+
 
 
 
