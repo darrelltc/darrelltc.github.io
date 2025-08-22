@@ -27,14 +27,14 @@ h1, h2 {
 }
 
 .chapter-body {
-  margin-top: 21px;
+  margin-top: 20px;
 }
 
 .chapter-body p {
   text-indent: 2em;
   margin: 12px 0;
   white-space: pre-wrap; /* 保留换行 */
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .nav {
@@ -57,6 +57,7 @@ h1, h2 {
   background: #c7edcc;
   color: #fff;
 }
+
 
 
 
