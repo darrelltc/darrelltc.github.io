@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>缠中说禅108课</title>
+    <link rel="icon" href="./photos/favicon.jpg" type="image/jpeg">
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      background-color: #c1e6c6; /* 护眼绿色 #D4E1CD 豆绿色 #c7edcc */
+      color: #333; /* 深灰色，保护眼睛又清晰 */
+    }
+
+    /* 主内容区 + 侧栏布局 */
+    .main {
+      flex: 1;
+      padding: 40px;
+    }
+    .sidebar {
+      width: 250px;
+      background: #ffffff;
+      border-left: 1px solid #ddd;
+      padding: 30px 20px;
+      box-shadow: -2px 0 6px rgba(0, 0, 0, 0.03);
+      background-color: #C1E6C6; /* 护眼绿色 #D4E1CD 豆绿色 #E0F0D9 */
+      color: #333; /* 深灰色，保护眼睛又清晰 */      
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #searchBox {
+      display: block;
+      margin: 0 auto 20px auto;
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      max-width: 600px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto 30px auto;
+    }
+
+    .column {
+      flex: 1 1 45%;
+      min-width: 300px;
+    }
+
+    .entry {
+      background: #fff;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background 0.2s;
+      background-color: #C1E6C6; /* 护眼绿色 #c7edcc 豆绿色 #c1e6c6 */
+      color: #333; /* 深灰色，保护眼睛又清晰 */      
+    }
+
+    .entry:hover {
+      background: #c7edcc;
+    }
+
+    .entry a {
+      text-decoration: none;
+      color: dimgray;
+      font-size: 17px;
+    }
+
+    .date {
+      float: right;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .pagination {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .pagination button {
+      padding: 8px 14px;
+      margin: 0 4px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #007acc;
+      color: white;
+    }
+
+    .pagination button:disabled {
+      background: #aaa;
+      cursor: default;
+    }
+
+    /* 右侧常用网址栏 */
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main">
+    <h1>缠中说禅108课</h1>
+    <input type="text" id="searchBox" placeholder="🔍 搜索文档标题或日期..." style=" background-color: #C1E6C6;" />
+
+    <div class="grid">
+      <div class="column" id="leftColumn"></div>
+      <div class="column" id="rightColumn"></div>
+    </div>
+
+    <div class="pagination" id="pagination"></div>
+  </div>
+
+  <div class="sidebar">
+    <h2>🔗 常用网址</h2>
+    <ul>
+      <li><a href="https://i.eastmoney.com/1130206971653044" target="_blank">今日投资机会</a></li>
+      <li><a href="https://weibo.com" target="_blank">微博</a></li>
+      <li><a href="D:/TG/Gpzx/stocksdict.html" target="_blank">个股常用数据链接</a></li>
+      <li><a href="https://quote.eastmoney.com/zixuan/?from=home" target="_blank">自选股</a></li>
+      <li><a href="https://emrnweb.eastmoney.com/nxfxb/home?appfenxiang=1" target="_blank">牛熊风向标</a></li>
+      <li><a href="https://emdata.eastmoney.com/appdc/zjlx/index.html?appfenxiang=1#/" target="_blank">主力资金流向</a></li>
+      <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/bidding.html?appfenxiang=1" target="_blank">集合竞价</a></li>
+      <li><a href="https://emrnweb.eastmoney.com/ztzt/Home?appfenxiang=1&date={TODAY}&tab=3" target="_blank">涨停专题</a></li>
+      <li><a href="https://emdata.eastmoney.com/appdc/lhb/index.html?appfenxiang=1#/lhb" target="_blank">龙虎榜</a></li>
+      <li><a href="https://emrnweb.eastmoney.com/znzg/StockRankList?appfenxiang=1" target="_blank">智能诊股</a></li>
+      <li><a href="https://emrnweb.eastmoney.com/yjzt/home?appfenxiang=1" target="_blank">业绩表现</a></li>
+      <li><a href="https://vipmoney.eastmoney.com/collect/app_ranking/ranking/app.html?appfenxiang=1#/stock&hashcode=20220620" target="_blank">东方财富热榜</a></li>      
+      <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/index.html" target="_blank">盯盘</a></li>
+      <li><a href="https://emdata.eastmoney.com/appdc/fpl/index.html?appfenxiang=1#/" target="_blank">复盘啦</a></li>
+      <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/unusual.html?appfenxiang=1" target="_blank">异动提醒</a></li>
+      <li><a href="http://192.168.3.111:9999/ui/" target="_blank">Yacd面板</a></li>
+      <li><a href="https://www.baidu.com" target="_blank">百度搜索</a></li>
+      <li><a href="https://www.eastmoney.com" target="_blank">东方财富网</a></li>
+      <li><a href="https://xueqiu.com" target="_blank">雪球</a></li>
+      <li><a href="https://www.tonghuashun.com" target="_blank">同花顺官网</a></li>
+      <li><a href="https://chatgpt.com" target="_blank">ChatGPT</a></li>
+      <!-- 可继续添加 -->
+    </ul>
+  </div>
+
+  <script>
+    const allEntries = [
+      { title: "一 导引篇", href: "./01 导引篇.html", date: "2026-01-19" },
+      { title: "二 分型、笔、线段篇", href: "./02 分型、笔、线段篇.html", date: "2026-01-09" },
+      { title: "三 中枢、走势类型和买卖点篇", href: "./03 中枢、走势类型和买卖点篇.html", date: "2026-01-12" },
+      { title: "四 背驰篇", href: "./04 背驰篇.html", date: "2026-01-13" },
+      { title: "五 同级别分解篇", href: "./05 同级别分解篇.html", date: "2026-01-10" },
+      { title: "十三 中枢理论前传篇", href: "./13 中枢理论前传篇.html", date: "2026-01-01" },
+      { title: "附录一 重温缠师的经典语录", href: "重温缠师的经典语录.html", date: "2024-01-08" },
+      { title: "附录二 缠论应市", href: "缠论应市.html", date: "2026-01-18" },
+      // 更多条目...
+    ];
+
+    const perPage = 20;
+    let currentPage = 1;
+    let filteredEntries = [...allEntries];
+
+    function renderPage() {
+      const start = (currentPage - 1) * perPage;
+      const pageEntries = filteredEntries.slice(start, start + perPage);
+
+      const left = document.getElementById('leftColumn');
+      const right = document.getElementById('rightColumn');
+      left.innerHTML = '';
+      right.innerHTML = '';
+
+      pageEntries.forEach((entry, i) => {
+        const html = `
+          <div class="entry">
+            <a href="${entry.href}" >${entry.title}</a>    
+            <!-- 去掉在新标签打开： <a href="${entry.href}" target="_blank">${entry.title}</a> -->
+            <span class="date">${entry.date}</span>
+          </div>`;
+        (i % 2 === 0 ? left : right).innerHTML += html;
+      });
+
+      renderPagination();
+    }
+
+    function renderPagination() {
+      const totalPages = Math.ceil(filteredEntries.length / perPage);
+      const pagination = document.getElementById('pagination');
+      pagination.innerHTML = '';
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.disabled = i === currentPage;
+        btn.onclick = () => {
+          currentPage = i;
+          renderPage();
+        };
+        pagination.appendChild(btn);
+      }
+    }
+
+    document.getElementById('searchBox').addEventListener('input', function () {
+      const keyword = this.value.trim().toLowerCase();
+      filteredEntries = allEntries.filter(entry =>
+        entry.title.toLowerCase().includes(keyword) ||
+        entry.date.includes(keyword)
+      );
+      currentPage = 1;
+      renderPage();
+    });
+
+    renderPage();
+  </script>
+
+</body>
+</html>
