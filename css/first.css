@@ -69,7 +69,7 @@
 		background-size: cover;
 	}
 	.introduce {
-		background:  url("../image/Village.jpg");
+		background:  url("../image/sea.jpg");
 		background-size: cover;
 		text-align: center;
 		padding: 80px 0px;
@@ -220,3 +220,4 @@
 	.underline{
 		text-decoration: none;
 	}
+
