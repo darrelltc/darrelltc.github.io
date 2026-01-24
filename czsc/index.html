@@ -135,6 +135,66 @@
     .sidebar a:hover {
       text-decoration: underline;
     }
+    /* =========================
+   响应式布局（自适应）
+   ========================= */
+
+    /* 平板及以下 */
+    @media (max-width: 1024px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: auto;
+        border-left: none;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.03);
+      }
+
+      .main {
+        padding: 20px;
+      }
+    }
+
+    /* 手机端 */
+    @media (max-width: 768px) {
+      .grid {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .column {
+        min-width: auto;
+      }
+
+      .entry a {
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      #searchBox {
+        width: 95%;
+      }
+    }
+
+    /* 超小屏 */
+    @media (max-width: 480px) {
+      .entry {
+        padding: 10px 12px;
+      }
+
+      .date {
+        float: none;
+        display: block;
+        margin-top: 4px;
+        font-size: 12px;
+      }
+    }
+    
   </style>
 </head>
 <body>
@@ -250,4 +310,5 @@
 
 </body>
 </html>
+
 
