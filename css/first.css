@@ -81,7 +81,7 @@
 	}
 	.message {
 		font-family: "方正准圆简体";
-		color: #FAFAFA;
+		color: #3a3f44;
 		font-size: 18px;
 		line-height: 40px;
 		width: 60%;
@@ -220,6 +220,7 @@
 	.underline{
 		text-decoration: none;
 	}
+
 
 
 
