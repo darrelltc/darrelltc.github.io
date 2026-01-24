@@ -13,6 +13,8 @@
       margin: 0;
       padding: 0;
       display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       background-color: #c1e6c6; /* 护眼绿色 #D4E1CD 豆绿色 #c7edcc */
       color: #333; /* 深灰色，保护眼睛又清晰 */
     }
@@ -197,45 +199,63 @@
       }
     }
 
+      .site-footer {
+      width: 100%;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #ffffff;
+      background-color: #3399ff;
+      padding: 10px 0;
+    }
+
+      .layout {
+      display: flex;
+      flex: 1;              /* 占满 footer 以上的空间 */
+    }
+
   </style>
 </head>
 <body>
 
-  <div class="main">
-    <h1>缠中说禅108课</h1>
-    <input type="text" id="searchBox" placeholder="🔍 搜索文档标题或日期..." style=" background-color: #C1E6C6;" />
+  <div class="layout">
 
-    <div class="grid" id="entryGrid"></div>
+    <div class="main">
+      <h1>缠中说禅108课</h1>
+      <input type="text" id="searchBox" placeholder="🔍 搜索文档标题或日期..." style=" background-color: #C1E6C6;" />
 
-    <div class="pagination" id="pagination"></div>
-  </div>
+      <div class="grid" id="entryGrid"></div>
 
-  <div class="sidebar">
-    <h2>🔗 常用网址</h2>
-    <ul>
-      <li><a href="https://i.eastmoney.com/1130206971653044" target="_blank">今日投资机会</a></li>
-      <li><a href="https://weibo.com" target="_blank">微博</a></li>
-      <li><a href="D:/TG/Gpzx/stocksdict.html" target="_blank">个股常用数据链接</a></li>
-      <li><a href="https://quote.eastmoney.com/zixuan/?from=home" target="_blank">自选股</a></li>
-      <li><a href="https://emrnweb.eastmoney.com/nxfxb/home?appfenxiang=1" target="_blank">牛熊风向标</a></li>
-      <li><a href="https://emdata.eastmoney.com/appdc/zjlx/index.html?appfenxiang=1#/" target="_blank">主力资金流向</a></li>
-      <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/bidding.html?appfenxiang=1" target="_blank">集合竞价</a></li>
-      <li><a href="https://emrnweb.eastmoney.com/ztzt/Home?appfenxiang=1&date={TODAY}&tab=3" target="_blank">涨停专题</a></li>
-      <li><a href="https://emdata.eastmoney.com/appdc/lhb/index.html?appfenxiang=1#/lhb" target="_blank">龙虎榜</a></li>
-      <li><a href="https://emrnweb.eastmoney.com/znzg/StockRankList?appfenxiang=1" target="_blank">智能诊股</a></li>
-      <li><a href="https://emrnweb.eastmoney.com/yjzt/home?appfenxiang=1" target="_blank">业绩表现</a></li>
-      <li><a href="https://vipmoney.eastmoney.com/collect/app_ranking/ranking/app.html?appfenxiang=1#/stock&hashcode=20220620" target="_blank">东方财富热榜</a></li>      
-      <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/index.html" target="_blank">盯盘</a></li>
-      <li><a href="https://emdata.eastmoney.com/appdc/fpl/index.html?appfenxiang=1#/" target="_blank">复盘啦</a></li>
-      <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/unusual.html?appfenxiang=1" target="_blank">异动提醒</a></li>
-      <li><a href="http://192.168.3.111:9999/ui/" target="_blank">Yacd面板</a></li>
-      <li><a href="https://www.baidu.com" target="_blank">百度搜索</a></li>
-      <li><a href="https://www.eastmoney.com" target="_blank">东方财富网</a></li>
-      <li><a href="https://xueqiu.com" target="_blank">雪球</a></li>
-      <li><a href="https://www.tonghuashun.com" target="_blank">同花顺官网</a></li>
-      <li><a href="https://chatgpt.com" target="_blank">ChatGPT</a></li>
-      <!-- 可继续添加 -->
-    </ul>
+      <div class="pagination" id="pagination"></div>
+    </div>
+
+    <div class="sidebar">
+      <h2>🔗 常用网址</h2>
+      <ul>
+        <li><a href="https://i.eastmoney.com/1130206971653044" target="_blank">今日投资机会</a></li>
+        <li><a href="https://weibo.com" target="_blank">微博</a></li>
+        <li><a href="D:/TG/Gpzx/stocksdict.html" target="_blank">个股常用数据链接</a></li>
+        <li><a href="https://quote.eastmoney.com/zixuan/?from=home" target="_blank">自选股</a></li>
+        <li><a href="https://emrnweb.eastmoney.com/nxfxb/home?appfenxiang=1" target="_blank">牛熊风向标</a></li>
+        <li><a href="https://emdata.eastmoney.com/appdc/zjlx/index.html?appfenxiang=1#/" target="_blank">主力资金流向</a></li>
+        <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/bidding.html?appfenxiang=1" target="_blank">集合竞价</a></li>
+        <li><a href="https://emrnweb.eastmoney.com/ztzt/Home?appfenxiang=1&date={TODAY}&tab=3" target="_blank">涨停专题</a></li>
+        <li><a href="https://emdata.eastmoney.com/appdc/lhb/index.html?appfenxiang=1#/lhb" target="_blank">龙虎榜</a></li>
+        <li><a href="https://emrnweb.eastmoney.com/znzg/StockRankList?appfenxiang=1" target="_blank">智能诊股</a></li>
+        <li><a href="https://emrnweb.eastmoney.com/yjzt/home?appfenxiang=1" target="_blank">业绩表现</a></li>
+        <li><a href="https://vipmoney.eastmoney.com/collect/app_ranking/ranking/app.html?appfenxiang=1#/stock&hashcode=20220620" target="_blank">东方财富热榜</a></li>      
+        <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/index.html" target="_blank">盯盘</a></li>
+        <li><a href="https://emdata.eastmoney.com/appdc/fpl/index.html?appfenxiang=1#/" target="_blank">复盘啦</a></li>
+        <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/unusual.html?appfenxiang=1" target="_blank">异动提醒</a></li>
+        <li><a href="http://192.168.3.111:9999/ui/" target="_blank">Yacd面板</a></li>
+        <li><a href="https://www.baidu.com" target="_blank">百度搜索</a></li>
+        <li><a href="https://www.eastmoney.com" target="_blank">东方财富网</a></li>
+        <li><a href="https://xueqiu.com" target="_blank">雪球</a></li>
+        <li><a href="https://www.tonghuashun.com" target="_blank">同花顺官网</a></li>
+        <li><a href="https://chatgpt.com" target="_blank">ChatGPT</a></li>
+        <!-- 可继续添加 -->
+      </ul>
+    </div>
   </div>
 
   <script>
@@ -305,5 +325,18 @@
     renderPage();
   </script>
 
+    <!-- 底部版权 -->
+  <footer class="site-footer">
+    © 2025 ~ <span id="year"></span> By Utien<br>
+    萌 ICP 备 010120261830 号
+  </footer>
+
+  <script>
+  // 自动年份
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+</script>
+
 </body>
+
 </html>
