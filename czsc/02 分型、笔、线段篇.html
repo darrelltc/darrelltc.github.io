@@ -1339,5 +1339,44 @@ function handleKey(event) {
 })();
 </script>
 
+<!-- 底部版权 -->
+<div style="
+  text-align: center; 
+  font-family: Arial, sans-serif; 
+  font-size: 16px; 
+  color: #ffffff; 
+  background-color: #3399ff; 
+  padding: 8px 0;
+  position: relative;
+">
+  © 2025 ~ <span id="year"></span> By Utien<br>
+  萌 ICP 备 010120261830 号
 
+  <!-- 回顶部按钮 -->
+  <a href="#" id="backToTop" style="
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 28px;      /* 箭头更大 */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  " title="回到顶部">^</a>
+</div>
+
+<script>
+  // 自动年份
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // 回顶部平滑效果
+  document.getElementById('backToTop').addEventListener('click', function(e){
+    e.preventDefault();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+</script>
 </html>
