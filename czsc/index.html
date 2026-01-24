@@ -49,17 +49,18 @@
     }
 
     .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
       max-width: 1000px;
       margin: 0 auto 30px auto;
     }
 
-    .column {
-      flex: 1 1 45%;
-      min-width: 300px;
+    /* 手机端自动单列 */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .entry {
@@ -135,6 +136,7 @@
     .sidebar a:hover {
       text-decoration: underline;
     }
+
     /* =========================
    响应式布局（自适应）
    ========================= */
@@ -194,7 +196,7 @@
         font-size: 12px;
       }
     }
-    
+
   </style>
 </head>
 <body>
@@ -203,10 +205,7 @@
     <h1>缠中说禅108课</h1>
     <input type="text" id="searchBox" placeholder="🔍 搜索文档标题或日期..." style=" background-color: #C1E6C6;" />
 
-    <div class="grid">
-      <div class="column" id="leftColumn"></div>
-      <div class="column" id="rightColumn"></div>
-    </div>
+    <div class="grid" id="entryGrid"></div>
 
     <div class="pagination" id="pagination"></div>
   </div>
@@ -260,19 +259,17 @@
       const start = (currentPage - 1) * perPage;
       const pageEntries = filteredEntries.slice(start, start + perPage);
 
-      const left = document.getElementById('leftColumn');
-      const right = document.getElementById('rightColumn');
-      left.innerHTML = '';
-      right.innerHTML = '';
+      const grid = document.getElementById('entryGrid');
+      grid.innerHTML = '';
 
-      pageEntries.forEach((entry, i) => {
+      pageEntries.forEach(entry => {
         const html = `
           <div class="entry">
-            <a href="${entry.href}" >${entry.title}</a>    
-            <!-- 去掉在新标签打开： <a href="${entry.href}" target="_blank">${entry.title}</a> -->
+            <a href="${entry.href}">${entry.title}</a>
             <span class="date">${entry.date}</span>
-          </div>`;
-        (i % 2 === 0 ? left : right).innerHTML += html;
+          </div>
+        `;
+        grid.innerHTML += html;
       });
 
       renderPagination();
@@ -310,5 +307,3 @@
 
 </body>
 </html>
-
-
