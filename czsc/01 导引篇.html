@@ -164,6 +164,47 @@
 
    <!-- 🔧 固定右侧工具栏 -->
 <style>
+
+/* =========================
+   📱 小屏设备：整体居中，但内部布局不变
+   ========================= */
+
+/* 手机竖屏 */
+@media (max-width: 768px) and (orientation: portrait) {
+  #toolbox {
+    position: static !important;   /* 取消 fixed，避免遮挡 */
+    width: 220px;                  /* 保持原来的宽度 */
+    max-width: 95%;
+    margin: 16px auto;             /* 关键：整体水平居中 */
+    right: auto;
+    top: auto;
+    z-index: auto;
+  }
+}
+
+/* 手机横屏（阅读场景，重点修复） */
+@media (max-width: 1024px) and (orientation: landscape) {
+  #toolbox {
+    position: static !important;   /* 横屏也必须取消 fixed */
+    width: 220px;                  /* 保持原尺寸 */
+    max-width: 90%;
+    margin: 12px auto;             /* 整体居中 */
+    right: auto;
+    top: auto;
+    z-index: auto;
+  }
+}
+
+/* 桌面端：维持原行为 */
+@media (min-width: 1025px) {
+  #toolbox {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 220px;
+  }
+}
+
 #toolbox {
   position: fixed;
   top: 100px;
@@ -335,6 +376,7 @@ function handleKey(event) {
     searchText();
   }
 }
+
 </script>
 
   <!-- 页面内容结束后，放脚本 -->
@@ -373,4 +415,46 @@ function handleKey(event) {
 })();
 </script>
 
+<!-- 底部版权 -->
+<div style="
+  text-align: center; 
+  font-family: Arial, sans-serif; 
+  font-size: 16px; 
+  color: #ffffff; 
+  background-color: #3399ff; 
+  padding: 8px 0;
+  position: relative;
+">
+  © 2025 ~ <span id="year"></span> By Utien<br>
+  萌 ICP 备 010120261830 号
+
+  <!-- 回顶部按钮 -->
+  <a href="#" id="backToTop" style="
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 28px;      /* 箭头更大 */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  " title="回到顶部">^</a>
+</div>
+
+<script>
+  // 自动年份
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // 回顶部平滑效果
+  document.getElementById('backToTop').addEventListener('click', function(e){
+    e.preventDefault();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+</script>
+
 </html>
+
