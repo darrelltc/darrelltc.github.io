@@ -1135,34 +1135,49 @@ mark {
   font-weight: bold;
 }
  
- /* =========================
-   📱 手机端适配：工具栏不遮挡正文
+/* =========================
+   📱 手机端 & 横屏兜底处理
    ========================= */
 
-@media (max-width: 768px) {
-
+/* 手机竖屏 */
+@media (max-width: 768px) and (orientation: portrait) {
   #toolbox {
-    position: static !important;   /* 取消 fixed */
+    position: static !important;
+    margin: 16px auto;
     width: auto !important;
-    margin: 12px auto;
+    max-width: 95%;
     right: auto;
     top: auto;
     z-index: auto;
-
-    /* 视觉优化 */
-    max-width: 95%;
-    box-shadow: none;
-  }
-
-  #toolbox h4 {
-    font-size: 15px;
-  }
-
-  #toolbox input,
-  #toolbox button {
-    font-size: 16px; /* 防 iOS 自动放大 */
+    text-align: center; /* 居中 */
   }
 }
+
+/* 手机横屏（关键修复点） */
+@media (max-width: 1024px) and (orientation: landscape) {
+  #toolbox {
+    position: static !important;  /* 强制取消 fixed */
+    margin: 12px auto;
+    width: auto !important;
+    max-width: 90%;
+    right: auto;
+    top: auto;
+    z-index: auto;
+    text-align: center; /* 居中 */
+  }
+}
+
+/* 桌面端（显式声明，防止被误伤） */
+@media (min-width: 1025px) {
+  #toolbox {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 220px;
+    text-align: left;
+  }
+}
+
 </style>
 
 <div id="toolbox">
