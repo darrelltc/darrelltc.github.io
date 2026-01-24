@@ -140,12 +140,14 @@
     }
 
     /* =========================
-   响应式布局（自适应）
+       响应式布局（自适应）
    ========================= */
 
     /* 平板及以下 */
     @media (max-width: 1024px) {
-      body {
+
+      /* 改这里：不是 body，而是 layout */
+      .layout {
         flex-direction: column;
       }
 
@@ -164,12 +166,8 @@
     /* 手机端 */
     @media (max-width: 768px) {
       .grid {
-        flex-direction: column;
+        grid-template-columns: 1fr; /* 你这里是 grid，用这个更准 */
         gap: 12px;
-      }
-
-      .column {
-        min-width: auto;
       }
 
       .entry a {
@@ -197,21 +195,6 @@
         margin-top: 4px;
         font-size: 12px;
       }
-    }
-
-      .site-footer {
-      width: 100%;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      color: #ffffff;
-      background-color: #3399ff;
-      padding: 10px 0;
-    }
-
-      .layout {
-      display: flex;
-      flex: 1;              /* 占满 footer 以上的空间 */
     }
 
   </style>
