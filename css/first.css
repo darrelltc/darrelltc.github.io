@@ -77,11 +77,11 @@
 	}
 	.intTitle {
 		font-family: "方正粗圆简体";
-		color: white;
+		color: green;
 	}
 	.message {
 		font-family: "方正准圆简体";
-		color: #3a3f44;
+		color: cyan;
 		font-size: 18px;
 		line-height: 40px;
 		width: 60%;
@@ -220,6 +220,7 @@
 	.underline{
 		text-decoration: none;
 	}
+
 
 
 
