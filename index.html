@@ -152,7 +152,7 @@
 				</button>
 			</div>
 		</div>
-		<!-- 二维码关注 -->
+		<!-- 二维码关注
 		<div class="content">
 			<div>
 				<h3>首页</h3>
@@ -170,13 +170,17 @@
 				<img src="./image/code.jpg">
 				<h3 class="code">扫描二维码微信关注</h3>
 			</div>	
-		</div>
+		</div> -->
 		<!-- 备案号 -->
-		<p class="company">版权所有：Siki学院 京ICP备16046985号</p>
+		<p class="company">© 2025 ~ <span id="year"></span> By Utien<br>
+  萌 ICP 备 010120261830 号</p>
 		<!-- <div>{{message}}</div> -->
 	</div>
 </body>
-
+<script>
+  // 自动年份
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 <script src="js/vue.min.js"></script>
 <script type="text/javascript">
 	// 1.js实现鼠标悬停
@@ -331,6 +335,7 @@
 	})
 </script>
 </html>
+
 
 
 
