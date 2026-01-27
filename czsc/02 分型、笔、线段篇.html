@@ -13,7 +13,47 @@
 
   </script>
 
- </head>
+ 
+<style>
+#pageFooter {
+  width: 100vw;
+  margin: 0;
+  padding: 14px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #3399ff;
+  box-sizing: border-box;
+}
+#backToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 26px;
+  color: #fff;
+  background: rgba(51,153,255,.9);
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 2147483647;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s, transform .3s;
+}
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#backToTop:hover {
+  transform: translateY(-4px);
+}
+</style>
+
+</head>
 
  <body onload="CheckLocation();">
 
@@ -1106,9 +1146,29 @@
 
   </div>
   <!-- 回顶部按钮 -->
+
+
+ 
+<footer id="pageFooter">
+  © 2025 ~ <span id="year"></span> By Utien<br>
+  萌 ICP 备 010120261830 号
+</footer>
+
 <a href="#" id="backToTop" title="回到顶部">↑</a>
 
- </body>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('show', window.scrollY > 300);
+  });
+  backToTop.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
 
    <!-- 🔧 固定右侧工具栏 -->
 <style>
@@ -1394,10 +1454,7 @@ function handleKey(event) {
 <!-- =========================
      页面底部版权 Footer
      ========================= -->
-<footer id="pageFooter">
-  © 2025 ~ <span id="year"></span> By Utien<br>
-  萌 ICP 备 010120261830 号
-</footer>
+
 
 <script>
   // 年份
