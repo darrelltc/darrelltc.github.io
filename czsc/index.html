@@ -174,22 +174,17 @@ h1 {
 /* =========================
    右侧工具栏显示策略
    ========================= */
-
-/* 桌面端：正常显示 */
-@media (min-width: 1025px) {
-  #sidebar {
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    width: 220px;
-    display: block;
+/* 平板仍显示 */
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
   }
 }
 
-/* 平板及以下：直接隐藏 */
+/* 手机及以下直接隐藏 */
 @media (max-width: 768px) {
-  #sidebar {
-    display: none !important;
+  .sidebar {
+    display: none;
   }
 }
 
@@ -315,6 +310,7 @@ renderPage();
 
 </body>
 </html>
+
 
 
 
