@@ -1088,44 +1088,25 @@
 
    <!-- 🔧 固定右侧工具栏 -->
 <style>
-
- /* =========================
-   📱 小屏设备：整体居中，但内部布局不变
+/* =========================
+   右侧工具栏显示策略
    ========================= */
 
-/* 手机竖屏 */
-@media (max-width: 768px) and (orientation: portrait) {
-  #toolbox {
-    position: static !important;   /* 取消 fixed，避免遮挡 */
-    width: 220px;                  /* 保持原来的宽度 */
-    max-width: 95%;
-    margin: 16px auto;             /* 关键：整体水平居中 */
-    right: auto;
-    top: auto;
-    z-index: auto;
-  }
-}
-
-/* 手机横屏（阅读场景，重点修复） */
-@media (max-width: 1024px) and (orientation: landscape) {
-  #toolbox {
-    position: static !important;   /* 横屏也必须取消 fixed */
-    width: 220px;                  /* 保持原尺寸 */
-    max-width: 90%;
-    margin: 12px auto;             /* 整体居中 */
-    right: auto;
-    top: auto;
-    z-index: auto;
-  }
-}
-
-/* 桌面端：维持原行为 */
+/* 桌面端：正常显示 */
 @media (min-width: 1025px) {
   #toolbox {
     position: fixed;
     top: 100px;
     right: 20px;
     width: 220px;
+    display: block;
+  }
+}
+
+/* 平板及以下：直接隐藏 */
+@media (max-width: 1024px) {
+  #toolbox {
+    display: none !important;
   }
 }
  
