@@ -171,57 +171,25 @@ h1 {
 /* =========================
    响应式布局
 ========================= */
+/* =========================
+   右侧工具栏显示策略
+   ========================= */
 
-/* 平板及以下 */
-@media (max-width: 1024px) {
-  .layout {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: auto;
-    border-left: none;
-    border-top: 1px solid #ddd;
-  }
-
-  .main {
-    padding: 20px;
-  }
-}
-
-/* 手机端 */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  #searchBox {
-    width: 95%;
-  }
-
-  .message {
-    width: 90%;
-    font-size: 17px;
-    line-height: 36px;
-  }
-}
-
-/* 超小屏 */
-@media (max-width: 480px) {
-  .entry {
-    padding: 10px 12px;
-  }
-
-  .date {
-    float: none;
+/* 桌面端：正常显示 */
+@media (min-width: 1025px) {
+  #toolbox {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 220px;
     display: block;
-    margin-top: 4px;
-    font-size: 12px;
+  }
+}
+
+/* 平板及以下：直接隐藏 */
+@media (max-width: 1024px) {
+  #toolbox {
+    display: none !important;
   }
 }
 
@@ -347,3 +315,4 @@ renderPage();
 
 </body>
 </html>
+
