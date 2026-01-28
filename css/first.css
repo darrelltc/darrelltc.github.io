@@ -69,7 +69,7 @@
 		background-size: cover;
 	}
 	.introduce {
-		background:  url("../image/sea.jpg");
+		background:  url("../image/house.jpg");
 		background-size: cover;
 		text-align: center;
 		padding: 80px 0px;
@@ -77,11 +77,11 @@
 	}
 	.intTitle {
 		font-family: "方正粗圆简体";
-		color: yellow;
+		color: white;
 	}
 	.message {
-		font-family: "方正准圆简体";
-		color: yellow;
+		font-family: "楷体";
+		color: white;
 		font-size: 22px;
 		line-height: 40px;
 		width: 60%;
@@ -220,6 +220,7 @@
 	.underline{
 		text-decoration: none;
 	}
+
 
 
 
