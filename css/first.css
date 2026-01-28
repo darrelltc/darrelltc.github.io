@@ -82,7 +82,7 @@
 	.message {
 		font-family: "楷体";
 		color: white;
-		font-size: 22px;
+		font-size: 26px;
 		line-height: 40px;
 		width: 60%;
 		margin-left: 20%;
@@ -220,6 +220,7 @@
 	.underline{
 		text-decoration: none;
 	}
+
 
 
 
