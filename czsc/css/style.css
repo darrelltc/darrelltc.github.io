@@ -100,6 +100,14 @@ pre {
   margin: 0 auto;
   box-sizing: border-box;
 }
+@media (max-width: 768px) {
+  .page_body {
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
 .page_about {
     padding: 24px 24px;
 }
@@ -774,3 +782,4 @@ body {
     );
 
 }
+
