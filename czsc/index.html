@@ -183,6 +183,19 @@ h1 {
 
 /* 手机及以下直接隐藏 */
 @media (max-width: 768px) {
+
+.grid {
+    grid-template-columns: 1fr; /* 你这里是 grid，用这个更准 */
+    gap: 12px;
+  }
+
+  .entry a {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
   .sidebar {
     display: none;
   }
@@ -310,6 +323,7 @@ renderPage();
 
 </body>
 </html>
+
 
 
 
