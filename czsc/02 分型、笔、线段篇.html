@@ -1076,13 +1076,15 @@
   }
 }
 
-/* 平板以下：直接隐藏 */
+/* 平板及以下：直接隐藏 */
 @media (max-width: 1024px) {
   #toolbox {
     display: none !important;
   }
+  #backToTop {
+    display: none !important;
+  }
 }
-
 
 #toolbox {
   position: fixed;
