@@ -94,9 +94,11 @@ pre {
     padding: 24px 24px 22px 82px;
 }
 .page_body {
-    padding-top: 64px;
-    width: 1080px;
-    margin: 0 auto;
+  padding-top: 64px;
+  max-width: 1080px;   /* 最大阅读宽度 */
+  width: 100%;         /* 小屏自适应 */
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 .page_about {
     padding: 24px 24px;
@@ -770,4 +772,5 @@ body {
         rgba(0,0,0,0.75) 1.4px,
         transparent 1.5px
     );
+
 }
