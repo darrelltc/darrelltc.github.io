@@ -107,10 +107,6 @@ pre {
     padding-right: 12px;
   }
 }
-* {
-  outline: 1px solid red;
-}
-
 html, body {
   width: 100%;
   overflow-x: hidden;
@@ -789,6 +785,7 @@ body {
     );
 
 }
+
 
 
 
