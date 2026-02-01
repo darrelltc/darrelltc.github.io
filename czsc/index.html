@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>缠中说禅108课</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="./photos/favicon.jpg" type="image/jpeg">
+
+<style>
+
+/* =========================
+   全局基础
+========================= */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #c1e6c6;
+  color: #333;
+}
+
+/* 页面主体：左右结构 */
+.layout {
+  display: flex;
+  flex: 1;
+}
+
+/* =========================
+   主内容区
+========================= */
+
+.main {
+  flex: 1;
+  padding: 40px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#searchBox {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #C1E6C6;
+}
+
+/* 条目网格 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
+}
+
+.entry {
+  background-color: #C1E6C6;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.entry a {
+  text-decoration: none;
+  color: dimgray;
+  font-size: 17px;
+}
+
+.date {
+  float: right;
+  font-size: 13px;
+  color: #888;
+}
+
+/* 分页 */
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  margin: 0 4px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #007acc;
+  color: white;
+}
+
+.pagination button:disabled {
+  background: #aaa;
+  cursor: default;
+}
+
+/* =========================
+   右侧常用网址
+========================= */
+
+.sidebar {
+  width: 250px;
+  padding: 30px 20px;
+  background-color: #C1E6C6;
+  border-left: 1px solid #ddd;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   阅读段落（海景友好）
+========================= */
+
+.message {
+  font-family: "方正准圆简体";
+  color: #4a5560;              /* 低对比深蓝灰 */
+  font-size: 18px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  width: 60%;
+  margin: 40px auto;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.site-footer {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #3399ff;
+  padding: 10px 0;
+}
+
+/* =========================
+   响应式布局
+========================= */
+
+/* 平板仍显示 */
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
+  }
+}
+
+/* 手机及以下直接隐藏 */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* 你这里是 grid，用这个更准 */
+    gap: 12px;
+  }
+
+  .entry a {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+  
+  .sidebar {
+    display: none;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <div class="main">
+    <h1>缠中说禅108课</h1>
+    <input type="text" id="searchBox" placeholder="🔍 搜索文档标题或日期..." />
+
+    <div class="grid" id="entryGrid"></div>
+    <div class="pagination" id="pagination"></div>
+  </div>
+
+  <div class="sidebar">
+    <h2>🔗 常用网址</h2>
+    <ul>
+        <li><a href="https://i.eastmoney.com/1130206971653044" target="_blank">今日投资机会</a></li>
+        <li><a href="https://weibo.com" target="_blank">微博</a></li>
+        <li><a href="D:/TG/Gpzx/stocksdict.html" target="_blank">个股常用数据链接</a></li>
+        <li><a href="https://quote.eastmoney.com/zixuan/?from=home" target="_blank">自选股</a></li>
+        <li><a href="https://emrnweb.eastmoney.com/nxfxb/home?appfenxiang=1" target="_blank">牛熊风向标</a></li>
+        <li><a href="https://emdata.eastmoney.com/appdc/zjlx/index.html?appfenxiang=1#/" target="_blank">主力资金流向</a></li>
+        <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/bidding.html?appfenxiang=1" target="_blank">集合竞价</a></li>
+        <li><a href="https://emrnweb.eastmoney.com/ztzt/Home?appfenxiang=1&date={TODAY}&tab=3" target="_blank">涨停专题</a></li>
+        <li><a href="https://emdata.eastmoney.com/appdc/lhb/index.html?appfenxiang=1#/lhb" target="_blank">龙虎榜</a></li>
+        <li><a href="https://emrnweb.eastmoney.com/znzg/StockRankList?appfenxiang=1" target="_blank">智能诊股</a></li>
+        <li><a href="https://emrnweb.eastmoney.com/yjzt/home?appfenxiang=1" target="_blank">业绩表现</a></li>
+        <li><a href="https://vipmoney.eastmoney.com/collect/app_ranking/ranking/app.html?appfenxiang=1#/stock&hashcode=20220620" target="_blank">东方财富热榜</a></li>      
+        <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/index.html" target="_blank">盯盘</a></li>
+        <li><a href="https://emdata.eastmoney.com/appdc/fpl/index.html?appfenxiang=1#/" target="_blank">复盘啦</a></li>
+        <li><a href="https://vipmoney.eastmoney.com/collect/watchstock/unusual.html?appfenxiang=1" target="_blank">异动提醒</a></li>
+        <li><a href="http://192.168.3.111:9999/ui/" target="_blank">Yacd面板</a></li>
+        <li><a href="https://www.baidu.com" target="_blank">百度搜索</a></li>
+        <li><a href="https://www.eastmoney.com" target="_blank">东方财富网</a></li>
+        <li><a href="https://xueqiu.com" target="_blank">雪球</a></li>
+        <li><a href="https://www.tonghuashun.com" target="_blank">同花顺官网</a></li>
+        <li><a href="https://chatgpt.com" target="_blank">ChatGPT</a></li>
+        <!-- 可继续添加 -->
+    </ul>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  © 2025 ~ <span id="year"></span> By Utien<br>
+  萌 ICP 备 010120261830 号
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* 示例数据（保持你原逻辑） */
+const allEntries = [
+      { title: "一 导引篇", href: "./01 导引篇.html", date: "2026-01-19" },
+      { title: "二 分型、笔、线段篇", href: "./02 分型、笔、线段篇.html", date: "2026-01-09" },
+      { title: "三 中枢、走势类型和买卖点篇", href: "./03 中枢、走势类型和买卖点篇.html", date: "2026-01-12" },
+      { title: "四 背驰篇", href: "./04 背驰篇.html", date: "2026-01-13" },
+      { title: "五 同级别分解篇", href: "./05 同级别分解篇.html", date: "2026-01-10" },
+      { title: "十三 中枢理论前传篇", href: "./13 中枢理论前传篇.html", date: "2026-01-01" },
+      { title: "附录一 重温缠师的经典语录", href: "重温缠师的经典语录.html", date: "2024-01-08" },
+      { title: "附录二 缠论应市", href: "缠论应市.html", date: "2026-01-18" },
+      // 更多条目...
+];
+
+    const perPage = 20;
+    let currentPage = 1;
+    let filteredEntries = [...allEntries];
+
+    function renderPage() {
+      const start = (currentPage - 1) * perPage;
+      const pageEntries = filteredEntries.slice(start, start + perPage);
+
+      const grid = document.getElementById('entryGrid');
+      grid.innerHTML = '';
+
+      pageEntries.forEach(entry => {
+        const html = `
+          <div class="entry">
+            <a href="${entry.href}">${entry.title}</a>
+            <span class="date">${entry.date}</span>
+          </div>
+        `;
+        grid.innerHTML += html;
+      });
+
+      renderPagination();
+    }
+
+    function renderPagination() {
+      const totalPages = Math.ceil(filteredEntries.length / perPage);
+      const pagination = document.getElementById('pagination');
+      pagination.innerHTML = '';
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.disabled = i === currentPage;
+        btn.onclick = () => {
+          currentPage = i;
+          renderPage();
+        };
+        pagination.appendChild(btn);
+      }
+    }
+
+    document.getElementById('searchBox').addEventListener('input', function () {
+      const keyword = this.value.trim().toLowerCase();
+      filteredEntries = allEntries.filter(entry =>
+        entry.title.toLowerCase().includes(keyword) ||
+        entry.date.includes(keyword)
+      );
+      currentPage = 1;
+      renderPage();
+    });
+
+renderPage();
+</script>
+
+</body>
+</html>
