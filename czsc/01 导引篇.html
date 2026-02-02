@@ -542,7 +542,7 @@ function handleKey(event) {
 
   var pageId = location.pathname.replace(/\W+/g, '_');
 
-  fetch('https://stats.yourdomain.com/count?page=' + pageId)
+  fetch('https://vc.ctien.de5.net/count?page=' + pageId)
     .then(r => r.json())
     .then(d => {
       el.textContent = d.count;
@@ -552,4 +552,5 @@ function handleKey(event) {
 </script>
 
 </html>
+
 
