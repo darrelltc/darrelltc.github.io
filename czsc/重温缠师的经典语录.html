@@ -347,47 +347,38 @@
 
   </div>
 
-</body>
+<!-- 目录按钮 -->
+<a href="index.html" id="goToc" title="目录">☰</a>
+
+<!-- 回顶部按钮 -->
+<a href="#" id="backToTop" title="回到顶部">⮙</a>
+ </body>
+
    <!-- 🔧 固定右侧工具栏 -->
 <style>
 
 /* =========================
-   📱 小屏设备：整体居中，但内部布局不变
+   右侧工具栏显示策略
    ========================= */
 
-/* 手机竖屏 */
-@media (max-width: 768px) and (orientation: portrait) {
-  #toolbox {
-    position: static !important;   /* 取消 fixed，避免遮挡 */
-    width: 220px;                  /* 保持原来的宽度 */
-    max-width: 95%;
-    margin: 16px auto;             /* 关键：整体水平居中 */
-    right: auto;
-    top: auto;
-    z-index: auto;
-  }
-}
-
-/* 手机横屏（阅读场景，重点修复） */
-@media (max-width: 1024px) and (orientation: landscape) {
-  #toolbox {
-    position: static !important;   /* 横屏也必须取消 fixed */
-    width: 220px;                  /* 保持原尺寸 */
-    max-width: 90%;
-    margin: 12px auto;             /* 整体居中 */
-    right: auto;
-    top: auto;
-    z-index: auto;
-  }
-}
-
-/* 桌面端：维持原行为 */
-@media (min-width: 1025px) {
+/* 桌面端及平板：正常显示 */
+@media (min-width: 1024px) {
   #toolbox {
     position: fixed;
     top: 100px;
     right: 20px;
     width: 220px;
+    display: block;
+  }
+}
+
+/* 平板及以下：直接隐藏 */
+@media (max-width: 1024px) {
+  #toolbox {
+    display: none !important;
+  }
+  #backToTop {
+    display: none !important;
   }
 }
 
@@ -437,7 +428,105 @@ mark {
   background-color: yellow;
   font-weight: bold;
 }
+
+#pageFooter {
+  width: 100%;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #3399ff;
+  padding: 32px 0;
+}
+
+/* 目录 + 回顶部 共用风格 */
+#goToc,
+#backToTop {
+  position: fixed;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+  background-color: #3399ff;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 9999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* 目录在上 */
+#goToc {
+  bottom: 60px;
+}
+
+/* 回顶部在下 */
+#backToTop {
+  bottom: 10px;
+}
+
+/* 显示状态 */
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 悬停反馈 */
+#backToTop:hover {
+  transform: translateY(-4px);
+}
+#goToc:hover {
+  transform: translateY(-4px);
+}
+
 </style>
+
+<script>
+function jumpTo(keyword) {
+  // 1. 找到简介所在的 message
+  const intro = document.querySelector('.intro');
+  if (!intro) return;
+
+  const introMessage = intro.closest('.message');
+  if (!introMessage) return;
+
+  // 2. 从简介 message 的下一个兄弟节点开始
+  let node = introMessage.nextElementSibling;
+
+  while (node) {
+    // 只在正文 message 中找
+    if (node.classList.contains('message') &&
+        node.classList.contains('default')) {
+
+      const walker = document.createTreeWalker(
+        node,
+        NodeFilter.SHOW_TEXT,
+        null,
+        false
+      );
+
+      while (walker.nextNode()) {
+        const textNode = walker.currentNode;
+        if (textNode.nodeValue &&
+            textNode.nodeValue.includes(keyword)) {
+
+          textNode.parentElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+          return;
+        }
+      }
+    }
+
+    node = node.nextElementSibling;
+  }
+
+  alert('正文中未找到对应章节');
+}
+</script>
 
 <div id="toolbox">
   <h4>🔍 页面工具</h4>
@@ -576,7 +665,7 @@ function handleKey(event) {
       Object.assign(img.style, {
         display: 'block',
         margin: '0 auto',
-        maxWidth: '1080px',
+        maxWidth: '100%',
         width: '100%',
         height: 'auto',
         borderRadius: '6px'
@@ -601,45 +690,52 @@ function handleKey(event) {
 })();
 </script>
 
-<!-- 底部版权 -->
-<div style="
-  text-align: center; 
-  font-family: Arial, sans-serif; 
-  font-size: 16px; 
-  color: #ffffff; 
-  background-color: #3399ff; 
-  padding: 8px 0;
-  position: relative;
-">
-  © 2025 ~ <span id="year"></span> By Utien<br>
-  萌 ICP 备 010120261830 号
+<!-- =========================
+     页面底部版权 Footer
+     ========================= -->
+<footer id="pageFooter">
+  <div class="footer-main">
+    © 2025 ~ <span id="year"></span> By Utien<br>
+    萌 ICP 备 010120261830 号
+  </div>
 
-  <!-- 回顶部按钮 -->
-  <a href="#" id="backToTop" style="
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 28px;      /* 箭头更大 */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-  " title="回到顶部">^</a>
-</div>
-
+  <div class="footer-stats">
+    阅读量： <span id="visitCount">-</span> 次
+  </div>
+</footer>
 <script>
-  // 自动年份
+  // 年份
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // 回顶部平滑效果
-  document.getElementById('backToTop').addEventListener('click', function(e){
-    e.preventDefault();
-    window.scrollTo({top: 0, behavior: 'smooth'});
+  const backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
   });
+
+  backToTop.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+(function () {
+  var el = document.getElementById('visitCount');
+  if (!el) return;
+
+  var pageId = location.pathname.replace(/\W+/g, '_');
+
+  fetch('https://vc.ctien.de5.net/count?page=' + pageId)
+    .then(r => r.json())
+    .then(d => {
+      el.textContent = d.count;
+    })
+    .catch(() => {});
+})();
 </script>
 </html>
+
 
