@@ -159,7 +159,7 @@ h1 {
    Footer
 ========================= */
 
-.site-footer {
+#site-footer {
   width: 100%;
   text-align: center;
   font-size: 16px;
@@ -245,13 +245,33 @@ h1 {
 
 </div>
 
-<footer class="site-footer">
-  © 2025 ~ <span id="year"></span> By Utien<br>
-  萌 ICP 备 010120261830 号
+<footer id="site-footer">
+  <div class="footer-main">
+    © 2025 ~ <span id="year"></span> By Utien<br>
+    萌 ICP 备 010120261830 号
+  </div>
+
+  <div class="footer-stats">
+    阅读量： <span id="visitCount">-</span> 次
+  </div>
 </footer>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+
+(function () {
+  var el = document.getElementById('visitCount');
+  if (!el) return;
+
+  var pageId = location.pathname.replace(/\W+/g, '_');
+
+  fetch('https://vc.ctien.de5.net/count?page=' + pageId)
+    .then(r => r.json())
+    .then(d => {
+      el.textContent = d.count;
+    })
+    .catch(() => {});
+})();
 
 /* 示例数据（保持你原逻辑） */
 const allEntries = [
@@ -322,3 +342,4 @@ renderPage();
 
 </body>
 </html>
+
