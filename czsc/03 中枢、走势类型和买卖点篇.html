@@ -1674,10 +1674,15 @@ function handleKey(event) {
      页面底部版权 Footer
      ========================= -->
 <footer id="pageFooter">
-  © 2025 ~ <span id="year"></span> By Utien<br>
-  萌 ICP 备 010120261830 号
-</footer>
+  <div class="footer-main">
+    © 2025 ~ <span id="year"></span> By Utien<br>
+    萌 ICP 备 010120261830 号
+  </div>
 
+  <div class="footer-stats">
+    阅读量： <span id="visitCount">-</span> 次
+  </div>
+</footer>
 <script>
   // 年份
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -1696,6 +1701,20 @@ function handleKey(event) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+(function () {
+  var el = document.getElementById('visitCount');
+  if (!el) return;
+
+  var pageId = location.pathname.replace(/\W+/g, '_');
+
+  fetch('https://vc.ctien.de5.net/count?page=' + pageId)
+    .then(r => r.json())
+    .then(d => {
+      el.textContent = d.count;
+    })
+    .catch(() => {});
+})();
 </script>
 
 </html>
